@@ -1,0 +1,39 @@
+[package]
+name = "nexus-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sven Normen Esslinger"]
+description = "Nexus Core: Foundational Rust framework powering xMesh/NovaNet/QNET mesh networking, XCoin/QCoin blockchain, AI agent swarms, and self-improving systems. Core component of Esslinger ecosystem and Grok Launcher initiatives."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/digitaldesignerjazz/nexus-core-rust"
+keywords = ["mesh-network", "blockchain", "ai-agents", "networking", "core", "rust", "qnet", "novanet", "xmesh", "p2p"]
+categories = ["network-programming", "cryptography", "command-line-utilities", "asynchronous"]
+readme = "README.md"
+rust-version = "1.75"
+
+[dependencies]
+tokio = { version = "1.36", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+anyhow = "1.0"
+config = "0.13"
+
+# Planned / commented for phased rollout - uncomment and cargo update as modules mature
+# secp256k1 = { version = "0.29", features = ["rand", "recovery", "global-context"] }
+# ring = "0.17"
+# quinn = { version = "0.11", features = ["rustls"] }
+# rustls = "0.23"
+# libp2p = { version = "0.54", features = ["tokio", "dns", "websocket", "noise", "yamux", "identify", "ping", "kad"] }
+# tonic = "0.12"
+
+[dev-dependencies]
+tokio-test = "0.4"
+assert_cmd = "2.0"
+predicates = "3.0"
+
+[[bin]]
+name = "nexus-core"
+path = "src/main.rs"
